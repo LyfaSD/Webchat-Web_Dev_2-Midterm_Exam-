@@ -23,6 +23,13 @@ app.use(cors({
 }));
 app.use(express.json());
 
+const cors = require("cors");
+
+app.use(cors({
+  origin: "http://localhost:5173", // your frontend URL
+  credentials: true
+}));
+
 // Serve uploaded images as static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
